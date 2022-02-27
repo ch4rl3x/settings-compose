@@ -1,4 +1,4 @@
-package de.charlex.compose.settings.datastore.theme
+package de.charlex.compose.settings.datastore.example.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

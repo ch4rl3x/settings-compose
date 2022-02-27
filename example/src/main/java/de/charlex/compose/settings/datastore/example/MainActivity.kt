@@ -1,4 +1,4 @@
-package de.charlex.compose.settings.datastore
+package de.charlex.compose.settings.datastore.example
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -14,7 +14,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import de.charlex.compose.settings.datastore.theme.SettingsTheme
+import de.charlex.compose.settings.datastore.LocalSettingsDataStore
+import de.charlex.compose.settings.datastore.Setting
+import de.charlex.compose.settings.datastore.example.theme.SettingsTheme
 import de.charlex.settings.datastore.SettingsDataStore
 import de.charlex.settings.datastore.booleanPreference
 import de.charlex.settings.datastore.stringPreference

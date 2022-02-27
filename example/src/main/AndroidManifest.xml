@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.charlex.compose.settings.datastore">
+    package="de.charlex.compose.settings.datastore.example">
 
     <application
         android:allowBackup="true"
