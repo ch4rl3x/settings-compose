@@ -3,7 +3,7 @@
 
 <a href="https://github.com/Ch4rl3x/settings-compose/actions?query=workflow%3ABuild"><img src="https://github.com/ch4rl3x/settings-compose/actions/workflows/build.yml/badge.svg" alt="Build"></a>
 <a href="https://www.codefactor.io/repository/github/ch4rl3x/settings-compose"><img src="https://www.codefactor.io/repository/github/ch4rl3x/settings-compose/badge" alt="CodeFactor" /></a>
-<a href="https://repo1.maven.org/maven2/de/charlex/compose/settings-compose/"><img src="https://img.shields.io/maven-central/v/de.charlex.compose/settings-compose" alt="Maven Central" /></a>
+<a href="https://repo1.maven.org/maven2/de/charlex/compose/settings-datastore/"><img src="https://img.shields.io/maven-central/v/de.charlex.compose/settings-datastore" alt="Maven Central" /></a>
 
 # Add to your project
 
