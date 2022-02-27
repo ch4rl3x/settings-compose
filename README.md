@@ -18,12 +18,27 @@ dependencies {
 # How does it work?
 
 ```kotlin
+
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    ...
+    setContent {
+        //Provide SettingsDataStore around
+        CompositionLocalProvider(LocalSettingsDataStore provides settingsDataStore) {
+            ...
+        }
+    }
+}
+
+```
+
+```kotlin
 Setting(
     key = booleanPreference("key1", false),
     saveDebounceMillis = 250 //Optional
 ) { value, onValueChanged ->
     Switch(
-        checked = value, 
+        checked = value,
         onCheckedChange = onValueChanged
     )
 }
