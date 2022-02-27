@@ -1,51 +1,40 @@
-# HtmlText
-## Current Compose Version: 1.0.3
-Compose HtmlText
+# settings-compose
+## Current Compose Version: 1.1.0
 
-Text composable to show html text from resources
-
-<a href="https://github.com/ch4rl3x/HtmlText/actions?query=workflow%3ALint"><img src="https://github.com/ch4rl3x/HtmlText/workflows/Lint/badge.svg" alt="Lint"></a>
-<a href="https://github.com/ch4rl3x/HtmlText/actions?query=workflow%3AKtlint"><img src="https://github.com/ch4rl3x/HtmlText/workflows/Ktlint/badge.svg" alt="Ktlint"></a>
-
-<a href="https://www.codefactor.io/repository/github/ch4rl3x/HtmlText"><img src="https://www.codefactor.io/repository/github/ch4rl3x/HtmlText/badge" alt="CodeFactor" /></a>
-<a href="https://repo1.maven.org/maven2/de/charlex/compose/html-text/"><img src="https://img.shields.io/maven-central/v/de.charlex.compose/html-text" alt="Maven Central" /></a>
-
+<a href="https://github.com/Ch4rl3x/settings-compose/actions?query=workflow%3ABuild"><img src="https://github.com/ch4rl3x/settings-compose/actions/workflows/build.yml/badge.svg" alt="Build"></a>
+<a href="https://www.codefactor.io/repository/github/ch4rl3x/settings-compose"><img src="https://www.codefactor.io/repository/github/ch4rl3x/settings-compose/badge" alt="CodeFactor" /></a>
+<a href="https://repo1.maven.org/maven2/de/charlex/compose/settings-compose/"><img src="https://img.shields.io/maven-central/v/de.charlex.compose/settings-compose" alt="Maven Central" /></a>
 
 # Add to your project
 
-Add actual HtmlText library:
+Add actual settings-compose library:
 
 ```groovy
 dependencies {
-    implementation 'de.charlex.compose:html-text:1.0.0'
+    implementation 'de.charlex.compose:settings-datastore:1.0.0-rc01'
 }
 ```
 
 # How does it work?
 
-Use it like a normal Text composable
-
 ```kotlin
-HtmlText(textId = R.string.hello_world)
+Setting(
+    key = booleanPreference("key1", false),
+    saveDebounceMillis = 250 //Optional
+) { value, onValueChanged ->
+    Switch(
+        checked = value, 
+        onCheckedChange = onValueChanged
+    )
+}
 ```
-
-```xml
-<resources>
-    <string name="hello_world">Hello <b>World</b>. This <i><strike>text</strike>sentence</i> is form<b>att<u>ed</u></b> in simple html. <a href="https://github.com/ch4rl3x/HtmlText">HtmlText</a></string>
-</resources>
-```
-
-# Preview
-
-![HtmlText](https://github.com/ch4rl3x/HtmlText/blob/main/art/screenshot.png)
-
 
 That's it!
 
 License
 --------
 
-    Copyright 2021 Alexander Karkossa
+    Copyright 2022 Alexander Karkossa
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
