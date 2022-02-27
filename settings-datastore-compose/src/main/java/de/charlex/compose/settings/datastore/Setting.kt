@@ -1,6 +1,14 @@
 package de.charlex.compose.settings.datastore
 
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.structuralEqualityPolicy
 import de.charlex.settings.datastore.IDataStorePreference
 import de.charlex.settings.datastore.SettingsDataStore
 import kotlinx.coroutines.FlowPreview
@@ -38,7 +46,6 @@ fun <T> Setting(
         }
     }
 
-
     val value by settingsDataStore.get(key = key).collectAsState(initial = key.defaultValue)
 
     var internalValue by remember(value) { mutableStateOf(value, structuralEqualityPolicy()) }
@@ -49,7 +56,7 @@ fun <T> Setting(
         onValueChanged = {
             coroutineScope.launch {
                 internalValue = it
-                if(saveDebounceMillis != null) {
+                if (saveDebounceMillis != null) {
                     settingsDataStoreChannel.trySend(it)
                 } else {
                     settingsDataStore.put(key, it)

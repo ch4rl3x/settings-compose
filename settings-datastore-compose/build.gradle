@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'com.diffplug.spotless'
 }
 
 apply from: '../buildCompose.gradle'
@@ -14,18 +13,6 @@ ext {
 }
 
 apply from: '../_publish.gradle'
-
-spotless {
-    kotlin {
-        target "**/*.kt"
-        ktlint("0.42.1")
-    }
-
-    groovyGradle {
-        target '**/*.gradle'
-        greclipse().configFile(rootProject.file('spotless/greclipse.properties'))
-    }
-}
 
 android {
     compileSdkVersion buildConfig.compileSdk
