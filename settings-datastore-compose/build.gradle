@@ -9,7 +9,7 @@ apply from: '../buildCompose.gradle'
 ext {
     PUBLISH_GROUP_ID = 'de.charlex.compose'
     PUBLISH_ARTIFACT_ID = 'settings-datastore'
-    PUBLISH_VERSION = '1.0.0-rc01'
+    PUBLISH_VERSION = '1.0.0'
 }
 
 apply from: '../_publish.gradle'
@@ -50,6 +50,7 @@ android {
 }
 
 dependencies {
+    implementation 'de.charlex.compose:compose-cache:1.0.0'
     implementation 'de.charlex.settings:settings-datastore:1.0.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

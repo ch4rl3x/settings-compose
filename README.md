@@ -11,11 +11,13 @@ Add actual settings-compose library:
 
 ```groovy
 dependencies {
-    implementation 'de.charlex.compose:settings-datastore:1.0.0-rc01'
+    implementation 'de.charlex.compose:settings-datastore:1.0.0'
 }
 ```
 
 # How does it work?
+
+## Provide the SettingsDataStore
 
 ```kotlin
 
@@ -32,11 +34,15 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 ```
 
+## Use one of the following ways
+
+### SettingsContext
+
 ```kotlin
 Setting(
     key = booleanPreference("key1", false),
     saveDebounceMillis = 250 //Optional
-) { value, onValueChanged ->
+) { value, onValueChange ->
     Switch(
         checked = value,
         onCheckedChange = onValueChanged
@@ -44,19 +50,27 @@ Setting(
 }
 ```
 
+### rememberSettingsValue
+
+```kotlin
+val (value, onValueChange) = rememberSettingsValue(key = booleanPreference("key2", false))
+Checkbox(checked = value, onCheckedChange = onValueChange)
+```
+
+
 That's it!
 
 License
 --------
 
     Copyright 2022 Alexander Karkossa
-
+    
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
-
+    
        http://www.apache.org/licenses/LICENSE-2.0
-
+    
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
