@@ -24,7 +24,7 @@ fun <T> Setting(
     key: IDataStorePreference<T>,
     saveDebounceMillis: Long? = null,
     settingsDataStore: SettingsDataStore = LocalSettingsDataStore.current,
-    content: @Composable (value: T, onValueChanged: (T) -> Unit) -> Unit
+    content: @Composable (value: T, onValueChange: (T) -> Unit) -> Unit
 ) {
     // remember a channel we can send to.
     // Conflated because we want old values to be replaced by new.
@@ -53,7 +53,7 @@ fun <T> Setting(
 
     content(
         value = internalValue,
-        onValueChanged = {
+        onValueChange = {
             coroutineScope.launch {
                 internalValue = it
                 if (saveDebounceMillis != null) {
