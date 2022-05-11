@@ -26,7 +26,7 @@ buildscript {
 
 plugins {
     id "io.codearte.nexus-staging" version "0.30.0"
-    id "com.diffplug.spotless" version "5.17.1"
+    id "com.diffplug.spotless" version "6.6.0"
 }
 
 subprojects {
