@@ -11,7 +11,7 @@ Add actual settings-compose library:
 
 ```groovy
 dependencies {
-    implementation 'de.charlex.compose:settings-datastore:1.0.0'
+    implementation 'de.charlex.compose:settings-datastore:2.0.0'
 }
 ```
 
@@ -40,8 +40,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 ```kotlin
 Setting(
-    key = booleanPreference("key1", false),
-    saveDebounceMillis = 250 //Optional
+    key = booleanPreference("key1", false)
 ) { value, onValueChange ->
     Switch(
         checked = value,

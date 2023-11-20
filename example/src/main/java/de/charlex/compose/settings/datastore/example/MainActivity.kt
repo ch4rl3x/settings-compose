@@ -48,7 +48,7 @@ fun Body(
                     val (boolValue, onBoolValueChange) = rememberSettingsValue(key = booleanPreference("key2", false))
                     Checkbox(checked = boolValue, onCheckedChange = onBoolValueChange)
 
-                    SettingsContext(key = stringPreference("email_two", "maria.mustermann@googlemail.com"), saveDebounceMillis = 5000) { value, onValueChanged ->
+                    SettingsContext(key = stringPreference("email_two", "maria.mustermann@googlemail.com")) { value, onValueChanged ->
                         TextField(value = value, onValueChange = onValueChanged)
                     }
                 }
