@@ -6,9 +6,9 @@ buildscript {
         compose_version = '1.5.4'
         compose_compiler_version = '1.5.4'
         buildConfig = [
-                'compileSdk': 31,
+                'compileSdk': 34,
                 'minSdk'    : 23,
-                'targetSdk' : 31,
+                'targetSdk' : 34,
         ]
     }
 
